@@ -1,7 +1,7 @@
 import Link from "next/link";
-import React from "react";
+import styles from "./EventItem.module.css";
 
-const EventItem = ({item}) => {
+const EventItem = ({ item }) => {
   const { id, title, date, location, image } = item;
 
   const readableDate = new Date(date).toLocaleDateString("en-US", {
@@ -10,26 +10,26 @@ const EventItem = ({item}) => {
     year: "numeric",
   });
 
-//   const formattedAddress = location.replace(", " , "\n");
+    const formattedAddress = location.replace(", " , "\n");
 
   const exploreLink = `/events/${id}`;
 
   return (
-    <li>
+    <li className={styles.item}>
       <img src={"/" + image} alt={title} />
-      <div>
-        <div>
+      <div className={styles.content}>
+        <div className={styles.summary}>
           <h2>{title}</h2>
-          <div>
+          <div className={styles.date}>
             <time>{readableDate}</time>
           </div>
-          <div>
-            {/* <address>{formattedAddress}</address> */}
-            <address>{location}</address>
+          <div className={styles.address}>
+            <address>{formattedAddress}</address>
+            {/* <address>{location}</address> */}
           </div>
         </div>
 
-        <div>
+        <div className={styles.actions}>
           <Link href={exploreLink}>Explore Event</Link>
         </div>
       </div>
