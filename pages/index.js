@@ -1,7 +1,12 @@
+import EventList from "@/components/events/EventList";
+import { getFeaturedEvents } from "@/data";
+
 export default function Home() {
+  const featureEvents = getFeaturedEvents();
+
   return (
-    <>
-      <h1>Udemy Next Course</h1>
-    </>
+    <div>
+      <EventList items={featureEvents} />
+    </div>
   );
 }

@@ -1,11 +1,12 @@
-import EventItem from './EventItem'
+import EventItem from "./EventItem";
+
 const EventList = (props) => {
   const { items } = props;
 
   return (
     <ul>
       {items.map((item) => (
-        <EventItem />
+        <EventItem key={item.id} item={item} />
       ))}
     </ul>
   );
