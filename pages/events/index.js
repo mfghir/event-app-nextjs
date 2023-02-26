@@ -1,9 +1,13 @@
-import React from 'react'
+import { getFeaturedEvents } from "@/data";
+import React from "react";
 
 const AllEventsPage = () => {
-  return (
-    <div>All Events Page</div>
-  )
-}
+  const featureEvents = getFeaturedEvents();
 
-export default AllEventsPage
+
+  return <div>
+
+  </div>;
+};
+
+export default AllEventsPage;
